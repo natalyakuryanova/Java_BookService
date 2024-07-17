@@ -27,21 +27,21 @@ public class Main {
     // Создайте мок-объект для WeatherService с использованием Mockito.
     // *
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
         // Создаем объект WeatherService. В реальной программе, этот класс
         // бы обращался к внешнему API для получения температуры.
-        WeatherService weatherService = new WeatherService();
+//        WeatherService weatherService = new WeatherService();
 
         // Создаем объект WeatherReporter, передаем ему WeatherService в конструктор.
-        WeatherReporter weatherReporter = new WeatherReporter(weatherService);
+//        WeatherReporter weatherReporter = new WeatherReporter(weatherService);
 
         // Получаем отчет о погоде.
-        String report = weatherReporter.generateReport();
+//        String report = weatherReporter.generateReport();
 
         // Выводим отчет на консоль.
-        System.out.println(report);
+//        System.out.println(report);
 
-    }
+//    }
 
 
 
@@ -189,17 +189,17 @@ public class Main {
     * для получения информации о книгах из базы данных.
     *  Ваша задача написать unit-тесты для BookService, используя Mockito для создания мок-объекта BookRepository.
     * */
-//    public static void main(String[] args) {
-//        BookRepository repository = new InMemoryBookRepository();
-//        BookService bookService = new BookService(repository);
-//
-//        Book book1 = bookService.findBookById("1");
-//        System.out.println("Найдена книга: " + book1.getTitle() + " by " + book1.getAuthor());
-//
-//        List<Book> allBooks = bookService.findAllBooks();
-//        System.out.println("Все книги:");
-//        for (Book book : allBooks) {
-//            System.out.println("- " + book.getTitle() + " от " + book.getAuthor());
-//        }
-//    }
+    public static void main(String[] args) {
+        BookRepository repository = new InMemoryBookRepository();
+        BookService bookService = new BookService(repository);
+
+        Book book1 = bookService.findBookById("1");
+        System.out.println("Найдена книга: " + book1.getTitle() + " by " + book1.getAuthor());
+
+        List<Book> allBooks = bookService.findAllBooks();
+        System.out.println("Все книги:");
+        for (Book book : allBooks) {
+            System.out.println("- " + book.getTitle() + " от " + book.getAuthor());
+        }
+    }
 }
